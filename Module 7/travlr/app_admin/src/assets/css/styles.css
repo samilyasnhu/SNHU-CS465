@@ -1,0 +1,21 @@
+body {
+  background: #f4f7f9;
+  color: #243746;
+}
+
+.navbar-brand {
+  letter-spacing: .02em;
+}
+
+.trip-card {
+  overflow: hidden;
+}
+
+.trip-image {
+  height: 190px;
+  object-fit: cover;
+}
+
+.card-text p:last-child {
+  margin-bottom: 0;
+}
