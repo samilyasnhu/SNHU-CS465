@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <h1 class="h2 mb-4">Add a Trip</h1>
+    <div *ngIf="message" class="alert alert-danger">{{ message }}</div>
+
+    <form [formGroup]="tripForm" (ngSubmit)="onSubmit()" class="card shadow-sm">
+      <div class="card-body p-4">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="code" class="form-label">Trip Code</label>
+            <input id="code" type="text" class="form-control" formControlName="code">
+          </div>
+          <div class="col-md-6">
+            <label for="name" class="form-label">Trip Name</label>
+            <input id="name" type="text" class="form-control" formControlName="name">
+          </div>
+          <div class="col-md-6">
+            <label for="length" class="form-label">Length</label>
+            <input id="length" type="text" class="form-control" placeholder="4 nights / 5 days" formControlName="length">
+          </div>
+          <div class="col-md-6">
+            <label for="start" class="form-label">Start Date</label>
+            <input id="start" type="date" class="form-control" formControlName="start">
+          </div>
+          <div class="col-md-6">
+            <label for="resort" class="form-label">Resort</label>
+            <input id="resort" type="text" class="form-control" formControlName="resort">
+          </div>
+          <div class="col-md-6">
+            <label for="perPerson" class="form-label">Price Per Person</label>
+            <input id="perPerson" type="number" step="0.01" class="form-control" formControlName="perPerson">
+          </div>
+          <div class="col-12">
+            <label for="image" class="form-label">Image File</label>
+            <input id="image" type="text" class="form-control" placeholder="reef1.jpg" formControlName="image">
+            <div class="form-text">Use an image in assets/images, such as reef1.jpg.</div>
+          </div>
+          <div class="col-12">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" rows="6" class="form-control" formControlName="description"></textarea>
+          </div>
+        </div>
+        <p *ngIf="tripForm.touched && tripForm.invalid" class="text-danger small mt-3 mb-0">All fields are required.</p>
+      </div>
+      <div class="card-footer bg-white text-end p-3">
+        <a class="btn btn-outline-secondary me-2" routerLink="/">Cancel</a>
+        <button type="submit" class="btn btn-primary">Save Trip</button>
+      </div>
+    </form>
+  </div>
+</div>

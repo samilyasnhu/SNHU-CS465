@@ -1,0 +1,13 @@
+<article class="card h-100 shadow-sm trip-card">
+  <img class="card-img-top trip-image" [src]="'assets/images/' + trip.image" [alt]="trip.name">
+  <div class="card-body d-flex flex-column">
+    <h2 class="h4 card-title">{{ trip.name }}</h2>
+    <p class="text-primary fw-semibold mb-1">{{ trip.resort }}</p>
+    <p class="small text-secondary">{{ trip.length }} &middot; ${{ trip.perPerson | number: '1.2-2' }} per person</p>
+    <div class="card-text small flex-grow-1" [innerHTML]="trip.description"></div>
+  </div>
+  <div class="card-footer bg-white border-0 pt-0 d-flex gap-2">
+    <button type="button" class="btn btn-outline-primary btn-sm" (click)="editTrip()">Edit Trip</button>
+    <button type="button" class="btn btn-outline-danger btn-sm" (click)="deleteTrip()">Delete</button>
+  </div>
+</article>
